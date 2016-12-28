@@ -1,0 +1,11 @@
+lane :test do
+  UI.success"Cool c'est bon !"
+  scan(
+    project: "MusicCenter.xcodeproj",
+    scheme: "MusicCenter",
+    code_coverage: true
+  )
+
+  xcov()
+
+end
