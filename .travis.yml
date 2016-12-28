@@ -1,5 +1,8 @@
 osx_image: xcode8.1
 language: objective-c
+cache:
+  - bundler
+  - cocoapods
 branches:
  only:
   - develop
@@ -7,7 +10,9 @@ branches:
 notifications:
  email: false
 before_install:
- - gem install bundler
- - bundle install && brew bundle
+  - gem install bundler
+  - bundle install && brew bundle
 script:
- - bundle exec fastlane tests
+  - bundle exec fastlane test
+after_success:
+  - bundle exec fastlane test
