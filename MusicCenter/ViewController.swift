@@ -31,14 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         getMusics(musicUrl: "http://localhost:8080/musics")
         self.musicTableView.dataSource = self
         self.musicTableView.delegate = self
-        
         self.musicTabBar.delegate = self
-
-        
-    }
-    
-    public class func addition(a: Int, b: Int) -> Int{
-        return a+b
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

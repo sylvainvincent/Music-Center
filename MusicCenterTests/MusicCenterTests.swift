@@ -21,15 +21,28 @@ class MusicCenterTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-   
-        XCTAssertTrue(ViewController.addition(a: 10, b: 2) == 12)
+    func testMusic(){
+        let audioData = NSData(base64Encoded: "E34" , options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+        let music = Music.init(name: "test", url: "/music", data: audioData)
+        XCTAssertNotNil(music)
+    }
+    
+    func testRequest(){
+     /*   let expectation = expectation(description: "test")
+        var viewController = ViewController()
+        viewController.getMusics(musicUrl: "http://localhost:8080/musics"){ success in
+            XCTAssertTrue(success)
+            
+            // Don't forget to fulfill the expectation in the async callback
+            expectation.fulfill()
+        }
+      */
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+          
         }
     }
     
